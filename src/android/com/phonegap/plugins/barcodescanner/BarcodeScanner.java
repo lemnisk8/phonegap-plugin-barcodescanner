@@ -133,6 +133,7 @@ public class BarcodeScanner extends CordovaPlugin {
         } else if (action.equals(EXIT)) {
 
             Intent backIntent = new Intent(this.cordova.getActivity().getApplicationContext(), io.framework7.ifsapp.MainActivity.class);
+            backIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             this.cordova.startActivityForResult(this, backIntent, REQUEST_CODE);
             return false;
             
